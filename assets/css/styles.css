@@ -1,0 +1,514 @@
+/*
+	Theme Name: landing
+	Author: Adrian Najarro
+	Description: Landing Page ITPF
+	Version: 1.0
+*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --primary: #1b2e58;
+  --black: #000000;
+  --white: #ffffff;
+  --menuborder: #1f1c3b;
+  --menubg: #171737;
+  --transition: all 0.25s ease-in-out;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  outline: transparent;
+  color: inherit;
+}
+h1,
+h2,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+/*********************************** Initial **********************************/
+body {
+  font-size: 0.85rem;
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow", sans-serif;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
+}
+header {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem 0;
+  position: fixed;
+  width: 100%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    padding 0.3s ease;
+  z-index: 2;
+}
+
+header.scrolled {
+  background-color: rgb(30 59 87 / 20%);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 1rem 0;
+}
+
+header .limit {
+  width: 70%;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  position: relative;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+header .logo img {
+  width: 3rem;
+}
+header .logo .text {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+header nav {
+  margin-left: auto;
+}
+header nav .links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+header nav .links .redirs {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2rem;
+  padding: 0.25rem;
+  border: 1px solid var(--menuborder);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+header nav .links .redirs .btn {
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+header nav .links .redirs .btn:hover,
+header nav .links .redirs .btn.active {
+  border: 1px solid var(--menuborder);
+  background-color: var(--menubg);
+}
+header nav .links .contact {
+  border: 1px solid var(--white);
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+header nav .links .contact:hover {
+  background-color: var(--white);
+}
+header nav .links .contact:hover .text {
+  color: var(--black);
+}
+header nav .links .contact .text {
+  color: var(--white);
+}
+header nav .links .contact .icon {
+  border-radius: 50%;
+  background-color: var(--white);
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header nav .links .contact .icon i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  line-height: normal;
+}
+/* .animate-up {
+  transform: translateY(150px);
+  transition: all 1s ease-out;
+}
+
+.animate-up.active {
+  transform: translateY(0);
+} */
+
+main .limit {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+main .limit.p1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+main .limit.p1::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10rem;
+  background: linear-gradient(to bottom, transparent, black);
+  z-index: 1;
+  pointer-events: none;
+}
+main .limit.p1 .bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+main .super {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--white);
+  text-align: center;
+  min-height: 100vh;
+  width: 70%;
+  z-index: 1;
+}
+main .super .title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+main .super .subt {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+main .super .btn {
+  border: 1px solid var(--white);
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: all 0.3s ease-in-out;
+  color: var(--white);
+  font-size: 1rem;
+}
+main .super .btn:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+main .why {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--white);
+  min-height: 100vh;
+  width: 65rem;
+  text-align: center;
+}
+main .why .title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+main .why .subt {
+  font-size: 1rem;
+  margin-bottom: 5rem;
+}
+main .why .cards {
+  display: flex;
+  gap: 3rem;
+  width: 100%;
+}
+main .why .cards .card {
+  width: calc((100% - 9rem) / 4);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid var(--white);
+  padding: 4rem 0;
+  gap: 2rem;
+}
+main .why .cards .card i {
+  font-size: 3rem;
+}
+main .why .cards .card p {
+  font-size: 1rem;
+}
+main .services {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--white);
+  min-height: 100vh;
+  width: 80rem;
+  text-align: center;
+}
+main .services .title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+main .services .subt {
+  font-size: 1rem;
+  margin-bottom: 4rem;
+}
+main .services .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  width: 100%;
+}
+main .services .cards .card {
+  /* width: calc((100% - 3rem) / 2); */
+  width: calc((100% - (3rem * 3)) / 4);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid var(--white);
+  padding: 3rem 2rem;
+}
+main .services .cards .card .icon-f {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+main .services .cards .card h1 {
+  margin-bottom: 1rem;
+}
+main .services .cards .card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+main .services .cards .card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+main .services .cards .card ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: left;
+}
+main .services .cards .card ul li i {
+  font-size: 1rem;
+}
+main .services .cards .card .btn-small{
+  margin-top: auto;
+  background-color: var(--white);
+  border-radius: .5rem;
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+main .partners {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--white);
+  min-height: 100vh;
+  width: 65rem;
+  text-align: center;
+}
+main .partners .title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+main .partners .subt {
+  font-size: 1rem;
+  margin-bottom: 4rem;
+}
+main .partners .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  width: 100%;
+}
+main .partners .cards .card {
+  width: calc((100% - (3rem * 3)) / 4);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid var(--white);
+  padding: 2rem;
+  gap: 2rem;
+}
+main .partners .cards .card i {
+  font-size: 4rem;
+}
+main .partners .cards .card img {
+  width: 4rem;
+}
+main .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  width: 100%;
+  min-height: 100vh;
+}
+main .contact .title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+main .contact .subt {
+  font-size: 1rem;
+  margin-bottom: 4rem;
+}
+main .contact .fcont {
+  display: flex;
+  width: 65rem;
+  gap: 5rem;
+}
+main .contact .fcont .t {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50%;
+}
+main .contact .fcont .t .ctitle {
+  font-size: 3rem;
+  font-weight: 600;
+}
+main .contact .fcont .t .cflow {
+  font-size: 1rem;
+}
+main .contact .fcont .form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 1rem;
+}
+main .contact .fcont .form .data {
+  outline: none;
+  border: 1px solid var(--primary);
+  padding: 1rem;
+  font-size: 1rem;
+}
+main .contact .fcont .form .select-wrapper {
+  position: relative;
+}
+
+main .contact .fcont .form .select-wrapper select {
+  width: 100%;
+  appearance: none;
+}
+main .contact .fcont .form .select-wrapper i {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%); /* centrar verticalmente */
+  pointer-events: none; /* evita que tape el clic del select */
+}
+main .contact .fcont .form .data.message {
+  resize: vertical;
+  font-family: inherit;
+  min-height: 5rem;
+  max-height: 8rem;
+}
+main .contact .fcont .form .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--black);
+  border: 0;
+  outline: none;
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+main .contact .fcont .form .btn:hover {
+  background-color: #3f3f3f;
+}
+footer {
+  background-color: var(--white);
+}
+footer .footer-limit {
+  border-top: 1px solid var(--black);
+  width: 65rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+footer .footer-right {
+  display: flex;
+  gap: 1rem;
+}
+footer .footer-right a {
+  display: flex;
+  border-radius: 50%;
+  background-color: var(--white);
+  padding: 0.5rem;
+}
+footer .footer-right a i {
+  font-size: 1.5rem;
+  color: var(--black);
+}
+.was {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+}
+.was a {
+  display: flex;
+  background-color: var(--white);
+  border-radius: 50%;
+  padding: 1rem;
+  box-shadow: -2px 2px 5px #00000042;
+}
+.was a i {
+  color: var(--black);
+  font-size: 2.5rem;
+}
