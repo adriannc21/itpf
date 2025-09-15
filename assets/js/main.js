@@ -9,22 +9,15 @@ window.addEventListener("scroll", function () {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const links = document.querySelectorAll(".redirs a");
+  const links = document.querySelectorAll(".redirs a, a.contact, a.btn.coti");
 
   links.forEach((link) => {
     link.addEventListener("click", function (e) {
       e.preventDefault();
-
-      // Quitar "active" de todos
       links.forEach((l) => l.classList.remove("active"));
-
-      // Agregar "active" al clicado
       this.classList.add("active");
-
-      // Obtener el destino desde el href
       const targetId = this.getAttribute("href").substring(1); // quita el "#"
       const targetElement = document.getElementById(targetId);
-
       if (targetElement) {
         targetElement.scrollIntoView({
           behavior: "smooth",

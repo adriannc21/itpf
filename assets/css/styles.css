@@ -8,10 +8,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
   --primary: #1b2e58;
-  --black: #000000;
+  --black: #0f0f0f;
   --white: #ffffff;
   --menuborder: #1f1c3b;
-  --menubg: #171737;
+  --menubg: #272727;
   --transition: all 0.25s ease-in-out;
 }
 
@@ -62,7 +62,7 @@ header.scrolled {
 }
 
 header .limit {
-  width: 70%;
+  width: 65rem;
   display: flex;
   margin: auto;
   align-items: center;
@@ -95,7 +95,7 @@ header nav .links .redirs {
   transform: translateX(-50%);
   border-radius: 2rem;
   padding: 0.25rem;
-  border: 1px solid var(--menuborder);
+  border: 1px solid var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,8 +111,9 @@ header nav .links .redirs .btn {
 }
 header nav .links .redirs .btn:hover,
 header nav .links .redirs .btn.active {
-  border: 1px solid var(--menuborder);
-  background-color: var(--menubg);
+  border: 1px solid var(--white);
+  background-color: var(--white);
+  color: var(--menubg);
 }
 header nav .links .contact {
   border: 1px solid var(--white);
@@ -149,14 +150,6 @@ header nav .links .contact .icon i {
   color: var(--black);
   line-height: normal;
 }
-/* .animate-up {
-  transform: translateY(150px);
-  transition: all 1s ease-out;
-}
-
-.animate-up.active {
-  transform: translateY(0);
-} */
 
 main .limit {
   display: flex;
@@ -182,7 +175,7 @@ main .limit.p1::before {
   left: 0;
   width: 100%;
   height: 10rem;
-  background: linear-gradient(to bottom, transparent, black);
+  background: linear-gradient(to bottom, transparent, var(--black));
   z-index: 1;
   pointer-events: none;
 }
@@ -203,7 +196,7 @@ main .super {
   color: var(--white);
   text-align: center;
   min-height: 100vh;
-  width: 70%;
+  width: 65rem;
   z-index: 1;
 }
 main .super .title {
@@ -297,7 +290,6 @@ main .services .cards {
   width: 100%;
 }
 main .services .cards .card {
-  /* width: calc((100% - 3rem) / 2); */
   width: calc((100% - (3rem * 3)) / 4);
   border-radius: 1rem;
   display: flex;
@@ -333,14 +325,14 @@ main .services .cards .card ul li {
 main .services .cards .card ul li i {
   font-size: 1rem;
 }
-main .services .cards .card .btn-small{
+main .services .cards .card .btn-small {
   margin-top: auto;
   background-color: var(--white);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   color: var(--black);
   font-size: 1rem;
   font-weight: 500;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
 }
 main .partners {
@@ -430,6 +422,7 @@ main .contact .fcont .form .data {
   border: 1px solid var(--primary);
   padding: 1rem;
   font-size: 1rem;
+  border-radius: 0.5rem;
 }
 main .contact .fcont .form .select-wrapper {
   position: relative;
@@ -443,8 +436,8 @@ main .contact .fcont .form .select-wrapper i {
   position: absolute;
   right: 1rem;
   top: 50%;
-  transform: translateY(-50%); /* centrar verticalmente */
-  pointer-events: none; /* evita que tape el clic del select */
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 main .contact .fcont .form .data.message {
   resize: vertical;
@@ -465,6 +458,7 @@ main .contact .fcont .form .btn {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border-radius: 0.5rem;
 }
 main .contact .fcont .form .btn:hover {
   background-color: #3f3f3f;
@@ -511,4 +505,132 @@ footer .footer-right a i {
 .was a i {
   color: var(--black);
   font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 100rem) {
+  /* 1600px */
+}
+@media only screen and (max-width: 88rem) {
+  /* 1400px */
+  main .services {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  main .services .cards {
+    gap: 2rem;
+  }
+  main .services .cards .card {
+    width: calc((100% - (2rem * 3)) / 4);
+  }
+}
+
+@media only screen and (max-width: 75rem) {
+  /* 1200px */
+  header .limit {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  main .super {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  main .why {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  main .services .cards .card {
+    width: calc((100% - (2rem * 1)) / 2);
+  }
+}
+
+@media only screen and (max-width: 62rem) {
+  /* 992px */
+  main .why .cards {
+    gap: 2rem;
+  }
+  main .why .cards .card {
+    width: calc((100% - 6rem) / 4);
+  }
+}
+
+@media only screen and (max-width: 48rem) {
+  /* 768px */
+  header nav .links .contact,
+  header nav .links .redirs {
+    display: none;
+  }
+  header nav .links .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  header nav .links .menu i {
+    font-size: 2rem;
+    color: var(--white);
+  }
+  main .super .title br {
+    display: none;
+  }
+  main .why .cards {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  main .why .cards .card {
+    width: calc((100% - 2rem) / 2);
+  }
+}
+
+@media only screen and (max-width: 36rem) {
+  /* 576px */
+  main .super .title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+  main .super .subt {
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+  }
+  .was {
+    right: 1rem;
+    bottom: 1rem;
+  }
+  main .why .cards {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  main .why .cards .card {
+    width: calc((100% - 1rem) / 2);
+    padding: 3rem 0;
+  }
+  main .why .title {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+  main .why .subt {
+    margin-bottom: 3rem;
+  }
+  main .services .title {
+    font-size: 1.5rem;
+  }
+  main .services .cards {
+    gap: 1rem;
+  }
+  main .services .cards .card {
+    width: calc((100% - (1rem * 1)) / 2);
+    padding: 2rem 1rem;
+  }
+  main .services .cards .card .icon-f {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  main .services .cards .card h1 {
+    font-size: 1rem;
+  }
+  main .services .cards .card p{
+    font-size: .9rem;
+  }
+  main .services .cards .card ul{
+    font-size: .9rem;
+  }
 }
